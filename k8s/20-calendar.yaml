@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calendar
+  namespace: liora
+  labels:
+    app: calendar
+    tags.datadoghq.com/env: exam
+    tags.datadoghq.com/service: calendar
+    tags.datadoghq.com/version: "1.0.0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: calendar
+  template:
+    metadata:
+      labels:
+        app: calendar
+        tags.datadoghq.com/env: exam
+        tags.datadoghq.com/service: calendar
+        tags.datadoghq.com/version: "1.0.0"
+    spec:
+      containers:
+        - name: calendar
+          image: liora/calendar:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9090
+          env:
+            - name: DD_AGENT_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: DD_ENV
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['tags.datadoghq.com/env']
+            - name: DD_SERVICE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['tags.datadoghq.com/service']
+            - name: DD_VERSION
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['tags.datadoghq.com/version']
+            - name: DD_LOGS_INJECTION
+              value: "true"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 9090
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 9090
+            initialDelaySeconds: 20
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 50m
+              memory: 96Mi
+            limits:
+              cpu: 300m
+              memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: calendar
+  namespace: liora
+spec:
+  selector:
+    app: calendar
+  ports:
+    - port: 9090
+      targetPort: 9090

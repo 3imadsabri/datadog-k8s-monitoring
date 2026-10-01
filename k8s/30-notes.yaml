@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes
+  namespace: liora
+  labels:
+    app: notes
+    tags.datadoghq.com/env: exam
+    tags.datadoghq.com/service: notes
+    tags.datadoghq.com/version: "1.0.0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: notes
+  template:
+    metadata:
+      labels:
+        app: notes
+        tags.datadoghq.com/env: exam
+        tags.datadoghq.com/service: notes
+        tags.datadoghq.com/version: "1.0.0"
+    spec:
+      initContainers:
+        - name: wait-for-db
+          image: liora/notes:1.0.0
+          imagePullPolicy: IfNotPresent
+          command:
+            - python
+            - -c
+            - |
+              import socket, time
+              while True:
+                  try:
+                      socket.create_connection(("db", 5432), timeout=2).close()
+                      print("db is reachable"); break
+                  except OSError:
+                      print("waiting for db:5432 ..."); time.sleep(2)
+      containers:
+        - name: notes
+          image: liora/notes:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: db
+            - name: CALENDAR_HOST
+              value: calendar
+            - name: DD_AGENT_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: DD_ENV
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['tags.datadoghq.com/env']
+            - name: DD_SERVICE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['tags.datadoghq.com/service']
+            - name: DD_VERSION
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['tags.datadoghq.com/version']
+            - name: DD_LOGS_INJECTION
+              value: "true"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 384Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notes
+  namespace: liora
+spec:
+  type: NodePort
+  selector:
+    app: notes
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080

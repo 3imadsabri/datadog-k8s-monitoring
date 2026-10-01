@@ -1,0 +1,50 @@
+#s explicitly stated otherwise all files in this repository are dual-licensed
+# under the Apache 2.0 or BSD3 Licenses.
+#
+# This product includes software developed at Datadog (https://www.datadoghq.com/)
+# Copyright 2022 Datadog, Inc.
+version: "3"
+services:
+  db:
+    container_name: db
+    image: "postgres"
+    environment:
+      POSTGRES_PASSWORD: Datascientest2023
+      POSTGRES_USER: postgres
+      POSTGRES_DB: testdb
+      POSTGRES_HOST_AUTH_METHOD: trust 
+  notes_app:
+    container_name: notes
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.notes
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    extra_hosts:                             # Linux only configuration
+      - "host.docker.internal:host-gateway"  # Linux only configuration
+    environment:
+      - DB_HOST=db                # References the Postgres container
+      - CALENDAR_HOST=calendar               # References the calendar container
+      - DD_AGENT_HOST=datadog
+  calendar_app:
+    container_name: calendar
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.calendar
+    ports:
+      - "9090:9090"
+  datadog:
+    container_name: dd-agent
+    image: "gcr.io/datadoghq/agent:latest"
+    environment:
+       - DD_API_KEY=37ee954802d4cd2c761cb7d0dfd900b5
+       - DD_SITE=us5.datadoghq.com  # Default. Change to eu.datadoghq.com, us3.datadoghq.com, us5.datadoghq.com as appropriate for your org
+       - DD_APM_ENABLED=true    # Enable APM
+    volumes: 
+       - /var/run/docker.sock:/var/run/docker.sock:ro 
+       - /proc/:/host/proc/:ro
+       - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro

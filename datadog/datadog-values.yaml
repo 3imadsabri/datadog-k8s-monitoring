@@ -1,0 +1,33 @@
+datadog:
+  site: datadoghq.eu
+  apiKeyExistingSecret: datadog-secret
+  clusterName: liora-k3s
+  tags:
+    - "env:exam"
+    - "team:monitoring"
+
+  # k3s : socket containerd et certificat kubelet spécifiques
+  criSocketPath: /run/k3s/containerd/containerd.sock
+  kubelet:
+    tlsVerify: false
+
+  # APM : l'agent écoute sur le port 8126 de chaque nœud (hostPort)
+  apm:
+    portEnabled: true
+
+  logs:
+    enabled: true
+    containerCollectAll: true
+
+  processAgent:
+    enabled: true
+    processCollection: true
+
+  kubeStateMetricsCore:
+    enabled: true
+
+  collectEvents: true
+
+clusterAgent:
+  enabled: true
+  replicas: 1

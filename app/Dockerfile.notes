@@ -1,0 +1,12 @@
+FROM python:3.10-slim
+
+WORKDIR /home
+COPY requirements.txt /home/
+RUN pip install --no-cache-dir -r requirements.txt
+COPY notes_app /home/notes_app
+
+LABEL com.datadoghq.tags.service="notes" \
+      com.datadoghq.tags.version="1.0.0"
+
+EXPOSE 8080
+CMD ["ddtrace-run", "python", "-m", "notes_app.app"]

@@ -1,0 +1,12 @@
+FROM python:3.10-slim
+
+WORKDIR /home
+COPY requirements.txt /home/
+RUN pip install --no-cache-dir -r requirements.txt
+COPY calendar_app /home/calendar_app
+
+LABEL com.datadoghq.tags.service="calendar" \
+      com.datadoghq.tags.version="1.0.0"
+
+EXPOSE 9090
+CMD ["ddtrace-run", "python", "-m", "calendar_app.app"]

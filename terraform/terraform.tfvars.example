@@ -1,0 +1,7 @@
+# Copier en terraform.tfvars (ignoré par git) et adapter.
+# Les clés ne vont PAS ici : les exporter en variables d'environnement
+#   export TF_VAR_datadog_api_key=...
+#   export TF_VAR_datadog_app_key=...
+alert_email  = "prenom.nom@example.com"
+cluster_name = "liora-k3s"
+namespace    = "liora"
