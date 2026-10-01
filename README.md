@@ -56,13 +56,13 @@ cd datadog-k8s-monitoring
 # 3. Application : PostgreSQL, calendar x2, notes x2
 ./scripts/02-deploy-app.sh
 
-# 4. Agent Datadog (Helm)
-export DD_API_KEY=<clé d'API>
+# 4. Agent Datadog (Helm) - la clé est saisie sans s'afficher à l'écran
+read -s -p "DD_API_KEY: " DD_API_KEY && export DD_API_KEY
 ./scripts/03-install-datadog.sh
 
 # 5. Monitors (Terraform)
+read -s -p "APP KEY: " TF_VAR_datadog_app_key && export TF_VAR_datadog_app_key
 export TF_VAR_datadog_api_key=$DD_API_KEY
-export TF_VAR_datadog_app_key=<clé d'application>
 export TF_VAR_alert_email=<adresse e-mail>
 ./scripts/04-create-monitors.sh
 ```
