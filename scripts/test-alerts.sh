@@ -9,8 +9,8 @@ case "${1:-}" in
     stress-ng --cpu 0 --cpu-load 90 --timeout 8m --metrics-brief
     ;;
   ram)
-    # Réserve 88 % de la mémoire disponible pendant 8 minutes (> 80 %)
-    stress-ng --vm 1 --vm-bytes 88% --vm-keep --timeout 8m --metrics-brief
+    # Réserve 75 % de la mémoire encore disponible pendant 8 minutes (> 80 % au total)
+    stress-ng --vm 1 --vm-bytes 75% --vm-keep --timeout 8m --metrics-brief
     ;;
   pod)
     # Image inexistante sur un réplica de calendar -> ErrImagePull / ImagePullBackOff (phase Pending)
