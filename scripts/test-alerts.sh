@@ -9,8 +9,12 @@ case "${1:-}" in
     stress-ng --cpu 0 --cpu-load 90 --timeout 8m --metrics-brief
     ;;
   ram)
-    # Réserve 75 % de la mémoire encore disponible pendant 8 minutes (> 80 % au total)
-    stress-ng --vm 1 --vm-bytes 75% --vm-keep --timeout 8m --metrics-brief
+    # Réserve la mémoire disponible moins 12 % du total pendant 8 minutes -> ~88 % utilisés (> 80 %)
+    total_kb=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
+    avail_kb=$(awk '/MemAvailable/ {print $2}' /proc/meminfo)
+    bytes_kb=$(( avail_kb - total_kb * 12 / 100 ))
+    echo "Réservation de $(( bytes_kb / 1024 )) Mo (disponible : $(( avail_kb / 1024 )) Mo / total : $(( total_kb / 1024 )) Mo)"
+    stress-ng --vm 1 --vm-bytes "${bytes_kb}K" --vm-keep --timeout 8m --metrics-brief
     ;;
   pod)
     # Image inexistante sur un réplica de calendar -> ErrImagePull / ImagePullBackOff (phase Pending)

@@ -80,7 +80,7 @@ Les traces apparaissent dans **APM > Traces** (service `notes`, env `exam`) ; le
 
 ```bash
 ./scripts/test-alerts.sh cpu           # CPU à 90 % pendant 8 min  -> alerte CPU
-./scripts/test-alerts.sh ram           # 75 % de la RAM libre pendant 8 min -> alerte RAM
+./scripts/test-alerts.sh ram           # RAM à ~88 % pendant 8 min -> alerte RAM
 ./scripts/test-alerts.sh pod           # image inexistante -> pod Pending -> alerte pod
 ./scripts/test-alerts.sh pod-restore   # retour à la normale -> e-mail de rétablissement
 ```
