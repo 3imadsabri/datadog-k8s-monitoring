@@ -65,6 +65,7 @@ resource "datadog_monitor" "pod_not_running" {
   }
 
   notify_no_data      = false
+  timeout_h           = 1 # un pod supprimé n'envoie plus de données : l'alerte se résout seule après 1 h
   require_full_window = false
   include_tags        = true
   tags                = local.tags

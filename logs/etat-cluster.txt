@@ -1,0 +1,28 @@
+=== 2026-10-01 23:53:53 ===
+NAME             STATUS   ROLES           AGE   VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION            CONTAINER-RUNTIME
+ip-172-31-7-89   Ready    control-plane   56m   v1.36.5+k3s1   172.31.7.89   <none>        Ubuntu 24.04.4 LTS   6.17.0-1017-aws (amd64)   containerd://2.3.4-k3s1.36
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                 SELECTOR
+deployment.apps/calendar   2/2     2            2           55m   calendar     liora/calendar:1.0.0   app=calendar
+deployment.apps/db         1/1     1            1           55m   postgres     postgres:16            app=db
+deployment.apps/notes      2/2     2            2           55m   notes        liora/notes:1.0.0      app=notes
+
+NAME                           READY   STATUS    RESTARTS   AGE   IP           NODE             NOMINATED NODE   READINESS GATES
+pod/calendar-7f6bb6d5f-jnxt8   1/1     Running   0          55m   10.42.0.10   ip-172-31-7-89   <none>           <none>
+pod/calendar-7f6bb6d5f-s56rq   1/1     Running   0          55m   10.42.0.9    ip-172-31-7-89   <none>           <none>
+pod/db-7fbdc57c8-9bzgj         1/1     Running   0          55m   10.42.0.14   ip-172-31-7-89   <none>           <none>
+pod/notes-68766dd7-8cbgb       1/1     Running   0          55m   10.42.0.12   ip-172-31-7-89   <none>           <none>
+pod/notes-68766dd7-vp849       1/1     Running   0          55m   10.42.0.11   ip-172-31-7-89   <none>           <none>
+
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE   SELECTOR
+service/calendar   ClusterIP   10.43.105.13   <none>        9090/TCP         55m   app=calendar
+service/db         ClusterIP   10.43.99.67    <none>        5432/TCP         55m   app=db
+service/notes      NodePort    10.43.157.93   <none>        8080:30080/TCP   55m   app=notes
+
+NAME                                  STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/postgres-data   Bound    pvc-0ba38788-0a2b-45d4-87a4-5122105734f4   1Gi        RWO            local-path     <unset>                 55m   Filesystem
+
+NAME                                          READY   STATUS    RESTARTS   AGE   IP           NODE             NOMINATED NODE   READINESS GATES
+datadog-agent-82m9d                           3/3     Running   0          48m   10.42.0.16   ip-172-31-7-89   <none>           <none>
+datadog-agent-cluster-agent-cb6c59689-rqpdm   1/1     Running   0          48m   10.42.0.15   ip-172-31-7-89   <none>           <none>
+datadog-agent-operator-7bf7794596-mznn4       1/1     Running   0          48m   10.42.0.17   ip-172-31-7-89   <none>           <none>

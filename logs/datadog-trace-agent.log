@@ -1,0 +1,73 @@
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:526 Starting to load the configuration
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:166 Loading proxy settings
+2026-10-01 23:05:58 UTC | TRACE-LOADER | WARN | (pkg/util/log/log.go:794 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:233 Set('proxy.no_proxy'): converting value from []interface {} to []string to match default type
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:684 Starting to resolve secrets
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:735 Finished resolving secrets
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (pkg/util/log/log.go:748 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_containers.go:173 Agent found cri socket at: /host/run/k3s/containerd/containerd.sock
+2026-10-01 23:05:58 UTC | TRACE-LOADER | WARN | (pkg/util/log/log.go:794 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_containers.go:196 Set('containerd_namespace'): converting value from []interface {} to []string to match default type
+2026-10-01 23:05:58 UTC | TRACE-LOADER | WARN | (pkg/util/log/log.go:794 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_containers.go:197 Set('containerd_namespaces'): converting value from []interface {} to []string to match default type
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (pkg/util/log/log.go:748 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_containers.go:293 Agent did not find PodResources socket at /var/lib/kubelet/pod-resources/kubelet.sock
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (pkg/util/log/log.go:748 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_detection.go:124 6 Features detected from environment: kubernetes,kube_orchestratorexplorer,kubelet_config_orchestrator_check,cri,containerd,process
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (cmd/loader/main_nix.go:308 in getListeners) | Listening to TCP receiver at port 8126...
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (cmd/loader/main_nix.go:330 in getListeners) | Listening to unix receiver at path /var/run/datadog/apm.socket
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (cmd/loader/main_nix.go:368 in getListeners) | Trace-agent OTLP receiver is disabled
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (cmd/loader/main_nix.go:131 in main) | Polling... [{Fd:10 Events:1 Revents:0} {Fd:12 Events:1 Revents:0}]
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (cmd/loader/main_nix.go:166 in main) | Received 2 events, executing trace-agent...
+2026-10-01 23:05:58 UTC | TRACE-LOADER | INFO | (cmd/loader/main_nix.go:264 in execOrExit) | Starting the trace-agent...
+WARNING: `-config` argument is deprecated and will be removed in a future version. Please use `--config` instead.
+2026-10-01 23:05:58 UTC | TRACE | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:526 Starting to load the configuration
+2026-10-01 23:05:58 UTC | TRACE | WARN | (pkg/util/log/log.go:788 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:536 Unknown environment variable: DD_APM_NET_RECEIVER_CLIENT_FD
+2026-10-01 23:05:58 UTC | TRACE | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:166 Loading proxy settings
+2026-10-01 23:05:58 UTC | TRACE | WARN | (pkg/util/log/log.go:794 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:233 Set('proxy.no_proxy'): converting value from []interface {} to []string to match default type
+2026-10-01 23:05:58 UTC | TRACE | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:684 Starting to resolve secrets
+2026-10-01 23:05:58 UTC | TRACE | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:735 Finished resolving secrets
+2026-10-01 23:05:58 UTC | TRACE | INFO | (pkg/util/log/log.go:748 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_containers.go:173 Agent found cri socket at: /host/run/k3s/containerd/containerd.sock
+2026-10-01 23:05:58 UTC | TRACE | WARN | (pkg/util/log/log.go:794 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_containers.go:196 Set('containerd_namespace'): converting value from []interface {} to []string to match default type
+2026-10-01 23:05:58 UTC | TRACE | WARN | (pkg/util/log/log.go:794 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_containers.go:197 Set('containerd_namespaces'): converting value from []interface {} to []string to match default type
+2026-10-01 23:05:58 UTC | TRACE | INFO | (pkg/util/log/log.go:748 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_containers.go:293 Agent did not find PodResources socket at /var/lib/kubelet/pod-resources/kubelet.sock
+2026-10-01 23:05:58 UTC | TRACE | INFO | (pkg/util/log/log.go:748 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_detection.go:124 6 Features detected from environment: containerd,process,kubernetes,kube_orchestratorexplorer,kubelet_config_orchestrator_check,cri
+2026-10-01 23:05:58 UTC | TRACE | INFO | (reflect/value.go:586 in call) | starting to load the IPC auth primitives (timeout: 30s)
+2026-10-01 23:05:59 UTC | TRACE | WARN | (pkg/api/security/cert/cert_getter.go:37 in getCertFilepath) | IPC cert/key created or retrieved next to auth_token_file_path location: /etc/datadog-agent/auth/ipc_cert.pem
+2026-10-01 23:05:59 UTC | TRACE | WARN | (pkg/api/security/cert/cert_getter.go:37 in getCertFilepath) | IPC cert/key created or retrieved next to auth_token_file_path location: /etc/datadog-agent/auth/ipc_cert.pem
+2026-10-01 23:05:59 UTC | TRACE | INFO | (comp/core/ipc/impl/ipc.go:161 in buildIPCComponent) | successfully loaded the IPC auth primitives (fingerprint: bc5d2d4dda034121)
+2026-10-01 23:05:59 UTC | TRACE | INFO | (reflect/value.go:586 in call) | configsync disabled: agent_ipc.config_refresh_interval invalid: 0)
+2026-10-01 23:05:59 UTC | TRACE | INFO | (comp/trace/config/impl/setup.go:73 in LoadConfigFile) | Loaded configuration: /etc/datadog-agent/datadog.yaml
+2026-10-01 23:06:00 UTC | TRACE | INFO | (comp/trace/config/impl/hostname.go:80 in acquireHostname) | Acquired hostname from gRPC: i-020acb5cf9ec4a1b8
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/runtime/runtime.go:28 in func1) | runtime: set GOMAXPROCS to: 2
+2026-10-01 23:06:00 UTC | TRACE | INFO | (comp/trace/agent/impl/agent.go:196 in prepGoRuntime) | Trace Agent final GOMAXPROCS: 2
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/runtime/gomemlimit_linux.go:44 in SetGoMemLimit) | Cgroup memory limit not found, doing nothing
+2026-10-01 23:06:00 UTC | TRACE | INFO | (comp/trace/agent/impl/agent.go:214 in prepGoRuntime) | GOMEMLIMIT unconstrained.
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/agent/agent.go:219 in NewAgent) | Starting Agent with processor trace buffer of size 0
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/api/api.go:193 in NewHTTPReceiver) | Receiver configured with 1 decoders and a timeout of 1000ms
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/writer/trace.go:145 in NewTraceWriter) | Trace writer initialized (climt=5 qsize=1 compression=zstd)
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/writer/tracev1.go:122 in NewTraceWriterV1) | Trace writer initialized (climt=5 qsize=1 compression=zstd)
+2026-10-01 23:06:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:291 in func1) | Starting agent telemetry for 7 schedules and 22 profiles
+2026-10-01 23:06:00 UTC | TRACE | INFO | (comp/core/tagger/impl-remote/remote.go:125 in func1) | remote tagger initialized successfully
+2026-10-01 23:06:00 UTC | TRACE | INFO | (comp/trace/agent/impl/run.go:102 in runAgentSidekicks) | Trace agent running on host i-020acb5cf9ec4a1b8
+2026-10-01 23:06:00 UTC | TRACE | INFO | (comp/core/tagger/impl-remote/remote.go:273 in func2) | tagger stream successfully initialized
+2026-10-01 23:06:00 UTC | TRACE | WARN | (comp/trace/agent/impl/run.go:77 in func2) | The /config/set endpoint on this port is deprecated and will be removed. The same endpoint is available on the debug server at 127.0.0.1:5012
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/api/listener.go:41 in NewMeasuredListener) | Listener started with 1000 maximum connections.
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/api/api.go:405 in Start) | Listening for traces at http://0.0.0.0:8126
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/api/api.go:411 in Start) | Using UDS listener at /var/run/datadog/apm.socket
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/api/listener.go:41 in NewMeasuredListener) | Listener started with 1000 maximum connections.
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/api/api.go:443 in Start) | Listening for traces at unix:///var/run/datadog/apm.socket
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/agent/agent.go:291 in Run) | Processing Pipeline configured with 2 workers
+2026-10-01 23:06:00 UTC | TRACE | INFO | (pkg/trace/agent/agent.go:301 in Run) | trace-agent running...
+2026-10-01 23:06:00 UTC | TRACE | INFO | (comp/core/remoteagent/helper/serverhelper.go:218 in func2) | Registered with Remote Agent Registry for config streaming (session_id=fa10abd8-512f-49d4-96c5-861d662a3b9e). Recommended refresh interval: 10 seconds.
+2026-10-01 23:06:05 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:06:10 UTC | TRACE | INFO | (pkg/config/remote/client/client.go:495 in pollLoop) | first update successful after 0 attempts
+2026-10-01 23:06:30 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:07:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:08:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:11:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:16:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:21:30 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:22:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:23:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:36:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:36:30 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:37:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:38:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:51:30 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:52:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run
+2026-10-01 23:53:00 UTC | TRACE | INFO | (comp/core/agenttelemetry/impl/agenttelemetry.go:133 in Run) | Starting agent telemetry run

@@ -1,0 +1,1331 @@
+2026-10-01 23:53:57 UTC | CORE | INFO | (pkg/util/log/log.go:748 in func1) | github.com/DataDog/datadog-agent/pkg/collector/python/init.go:337 Using '/opt/datadog-agent/embedded' as Python home
+2026-10-01 23:53:57 UTC | CORE | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:526 Starting to load the configuration
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/util/log/log.go:788 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:536 Unknown environment variable: DD_PROCESS_CONFIG_RUN_IN_CORE_AGENT_ENABLED
+2026-10-01 23:53:57 UTC | CORE | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:166 Loading proxy settings
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/util/log/log.go:794 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:233 Set('proxy.no_proxy'): converting value from []interface {} to []string to match default type
+2026-10-01 23:53:57 UTC | CORE | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:684 Starting to resolve secrets
+2026-10-01 23:53:57 UTC | CORE | INFO | (pkg/util/log/log.go:743 in func1) | github.com/DataDog/datadog-agent/pkg/config/setup/config.go:735 Finished resolving secrets
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/util/log/log.go:788 in func1) | github.com/DataDog/datadog-agent/pkg/config/env/environment_detection.go:126 Deactivating Autoconfig will disable most components. It's recommended to use autoconfig_exclude_features and autoconfig_include_features to activate/deactivate features selectively
+2026-10-01 23:53:57 UTC | CORE | INFO | (pkg/config/setup/config.go:526 in loadCustom) | Starting to load the configuration
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:532 in loadCustom) | expected map at 'service_monitoring_config.tls' got: <invalid reflect.Value>
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:532 in loadCustom) | unknown key from YAML: discovery.network_stats.enabled
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:532 in loadCustom) | unknown key from YAML: event_monitoring_config.socket
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:532 in loadCustom) | unknown key from YAML: compliance_config.enabled
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:532 in loadCustom) | unknown key from YAML: runtime_security_config.activity_dump.path_merge.enabled
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:532 in loadCustom) | unknown key from YAML: runtime_security_config.activity_dump.cgroup_wait_list_size
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:532 in loadCustom) | unknown key from YAML: runtime_security_config.network.enabled
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:532 in loadCustom) | unknown key from YAML: runtime_security_config.syscall_monitor.enabled
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/config/setup/config.go:536 in loadCustom) | Unknown environment variable: DD_PROCESS_CONFIG_RUN_IN_CORE_AGENT_ENABLED
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/system-probe/config/adjust.go:162 in deprecateCustom) | configuration key `runtime_security_config.activity_dump.cgroup_dump_timeout` is deprecated, use `runtime_security_config.activity_dump.dump_duration` instead
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/system-probe/config/adjust.go:164 in deprecateCustom) | Set('runtime_security_config.activity_dump.dump_duration'): converting value from time.Duration to string to match default type
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/api/security/cert/cert_getter.go:37 in getCertFilepath) | IPC cert/key created or retrieved next to auth_token_file_path location: /etc/datadog-agent/auth/ipc_cert.pem
+2026-10-01 23:53:57 UTC | CORE | WARN | (pkg/api/security/cert/cert_getter.go:37 in getCertFilepath) | IPC cert/key created or retrieved next to auth_token_file_path location: /etc/datadog-agent/auth/ipc_cert.pem
+2026-10-01 23:53:57 UTC | CORE | INFO | (comp/core/ipc/impl/ipc.go:200 in printAuthSignature) | successfully loaded the IPC auth primitives (fingerprint: bc5d2d4dda034121)
+Getting the status from the agent.
+
+===============
+Agent (v7.84.0)
+===============
+  Status date: 2026-10-01 23:53:57.441 UTC (1790898837441)
+  Agent start: 2026-10-01 23:05:59.027 UTC (1790895959027)
+  Pid: 12195
+  Go Version: go1.26.7
+  Python Version: 3.13.15
+  Build arch: amd64
+  Agent flavor: agent
+  FIPS Mode: not available
+  Log File: /var/log/datadog/agent.log
+  Log Level: INFO
+
+  Paths
+  =====
+    Config File: /etc/datadog-agent/datadog.yaml
+    conf.d: /etc/datadog-agent/conf.d
+    checks.d: /etc/datadog-agent/checks.d
+
+========
+Hostname
+========
+
+  ccrid: arn:aws:ec2:eu-north-1:814324539476:instance/i-020acb5cf9ec4a1b8
+  cluster-name: liora-k3s
+  ec2-hostname: ip-172-31-7-89.eu-north-1.compute.internal
+  host_aliases: [i-020acb5cf9ec4a1b8 ip-172-31-7-89-liora-k3s]
+  hostname: i-020acb5cf9ec4a1b8
+  hostname-resolution-version: 1
+  instance-id: i-020acb5cf9ec4a1b8
+  legacy-resolution-hostname: ip-172-31-7-89-liora-k3s
+  socket-fqdn: datadog-agent-82m9d
+  socket-hostname: datadog-agent-82m9d
+  host tags:
+    cluster_name:liora-k3s
+    env:exam
+    kube_cluster_name:liora-k3s
+    kube_node:ip-172-31-7-89
+    kube_node_role:control-plane
+    orch_cluster_id:45d3806d-acae-4ad4-a0b4-6772f76d88bd
+    team:monitoring
+  hostname provider: aws
+  unused hostname providers:
+    'hostname' configuration/environment: hostname is empty
+    'hostname_file' configuration/environment: 'hostname_file' configuration is not enabled
+    aws: Unable to determine hostname from EC2: status code 401 trying to GET http://169.254.169.254/latest/meta-data/instance-id
+    azure: azure_hostname_style is set to 'os'
+    fargate: agent is not running in sidecar mode
+    fqdn: FQDN hostname is not usable
+    gce: unable to retrieve hostname from GCE: GCE metadata API error: status code 401 trying to GET http://169.254.169.254/computeMetadata/v1/instance/hostname
+    os: OS hostname is not usable
+
+
+Host Info
+=========
+  bootTime: 2026-10-01 17:03:27 UTC (1790874207000)
+  hostId: ec2e8c4c-4245-94af-6f68-b6a8086e4d49
+  kernelArch: x86_64
+  kernelVersion: 6.17.0-1017-aws
+  os: linux
+  platform: ubuntu
+  platformFamily: debian
+  platformVersion: 24.04
+  procs: 209
+  uptime: 6h2m32s
+
+
+======
+Clocks
+======
+
+NTP offset: -2.314ms
+Intake offset: -819.807ms
+
+========
+Metadata
+========
+
+  agent_startup_time_ms: 1790895959227
+  agent_version: 7.84.0
+  application_monitoring_config: []
+  application_monitoring_config_fleet: []
+  auto_instrumentation_modes: []
+  config_apm_dd_url: 
+  config_dd_url: https://app.datadoghq.com
+  config_eks_fargate: false
+  config_id: 
+  config_logs_dd_url: 
+  config_logs_socks5_proxy_address: 
+  config_no_proxy: [169.254.169.254 100.100.100.200]
+  config_process_dd_url: 
+  config_proxy_http: 
+  config_proxy_https: 
+  config_site: datadoghq.eu
+  diagnostics: map[connectivity:[{success Agent package apt  map[endpoint:https://apt.datadoghq.com]} {success Agent package yum  map[endpoint:https://yum.datadoghq.com]} {success Agent installation  map[endpoint:https://install.datadoghq.com]} {success Agent keys  map[endpoint:https://keys.datadoghq.com]} {success LLM obs  map[endpoint:https://llmobs-intake.datadoghq.eu./api/v2/llmobs]} {failure APM traces invalid status code map[endpoint:https://trace.agent.datadoghq.eu./_health raw_error:invalid status code: 404]} {success Remote configuration  map[endpoint:https://config.datadoghq.eu./_health]} {success Connectivity to https://dbm-metrics-intake.datadoghq.eu./api/v2/databasequery  map[]} {success Connectivity to https://dbm-metrics-intake.datadoghq.eu./api/v2/dbmmetrics  map[]} {success Connectivity to https://dbm-metrics-intake.datadoghq.eu./api/v2/dbmmetadata  map[]} {success Connectivity to https://dbm-metrics-intake.datadoghq.eu./api/v2/dbmactivity  map[]} {success Connectivity to https://dbm-metrics-intake.datadoghq.eu./api/v2/dbmhealth  map[]} {success Connectivity to https://dbm-metrics-intake.datadoghq.eu./api/v2/dbmcolumnstatistics  map[]} {success Connectivity to https://ndm-intake.datadoghq.eu./api/v2/ndm  map[]} {success Connectivity to https://snmp-traps-intake.datadoghq.eu./api/v2/ndmtraps  map[]} {success Connectivity to https://ndmflow-intake.datadoghq.eu./api/v2/ndmflow  map[]} {success Connectivity to https://ndm-intake.datadoghq.eu./api/v2/ndmconfig  map[]} {success Connectivity to https://netpath-intake.datadoghq.eu./api/v2/netpath  map[]} {success Connectivity to https://contlcycle-intake.datadoghq.eu./api/v2/contlcycle  map[]} {success Connectivity to https://contimage-intake.datadoghq.eu./api/v2/contimage  map[]} {success Connectivity to https://sbom-intake.datadoghq.eu./api/v2/sbom  map[]} {success Connectivity to https://resources-intake.datadoghq.eu./api/v2/genresources  map[]} {success Connectivity to https://http-synthetics.datadoghq.eu./api/v2/synthetics  map[]} {success Connectivity to https://trace.agent.datadoghq.eu./api/v2/data_streams_messages  map[]} {success HTTPS connectivity to https://agent-http-intake.logs.datadoghq.eu./api/v2/logs  map[]} {success Connectivity to https://app.datadoghq.eu./api/v1/series  map[]} {success Connectivity to https://app.datadoghq.eu./api/v1/check_run  map[]} {success Connectivity to https://app.datadoghq.eu./intake/  map[]} {success Connectivity to https://app.datadoghq.eu./api/v1/validate  map[]} {success Connectivity to https://app.datadoghq.eu./api/v1/metadata  map[]} {success Connectivity to https://app.datadoghq.eu./api/v2/series  map[]} {success Connectivity to https://app.datadoghq.eu./api/beta/sketches  map[]} {success Connectivity to https://7-84-0-flare.agent.datadoghq.eu./support/flare  map[]}]]
+  feature_apm_enabled: true
+  feature_auto_instrumentation_enabled: false
+  feature_container_images_enabled: true
+  feature_csm_vm_containers_enabled: false
+  feature_csm_vm_hosts_enabled: false
+  feature_cspm_enabled: false
+  feature_cspm_host_benchmarks_enabled: false
+  feature_cws_enabled: false
+  feature_cws_network_enabled: false
+  feature_cws_remote_config_enabled: false
+  feature_cws_security_profiles_enabled: false
+  feature_discovery_enabled: true
+  feature_discovery_service_map_enabled: false
+  feature_dynamic_instrumentation_enabled: false
+  feature_gpu_monitoring_enabled: false
+  feature_imdsv2_enabled: false
+  feature_logs_enabled: true
+  feature_network_path_connections_monitoring_enabled: false
+  feature_network_path_remote_config_enabled: false
+  feature_networks_enabled: false
+  feature_networks_http_enabled: false
+  feature_networks_https_enabled: false
+  feature_oom_kill_enabled: false
+  feature_otlp_enabled: false
+  feature_process_enabled: true
+  feature_process_language_detection_enabled: false
+  feature_processes_container_enabled: true
+  feature_remote_configuration_enabled: true
+  feature_remote_updates_enabled: true
+  feature_synthetics_collector_enabled: false
+  feature_tcp_queue_length_enabled: false
+  feature_traceroute_enabled: false
+  feature_usm_enabled: false
+  feature_usm_go_tls_enabled: false
+  feature_usm_http2_enabled: false
+  feature_usm_istio_enabled: false
+  feature_usm_kafka_enabled: false
+  feature_usm_postgres_enabled: false
+  feature_usm_redis_enabled: false
+  feature_windows_crash_detection_enabled: false
+  fips_mode: false
+  flavor: agent
+  fleet_policies_applied: []
+  hostname_source: aws
+  infrastructure_mode: full
+  install_method_installer_version: datadog-3.250.4
+  install_method_tool: helm
+  install_method_tool_version: Helm
+  logs_transport: HTTP
+  package_version: 7.84.0
+  system_probe_core_enabled: false
+  system_probe_gateway_lookup_enabled: false
+  system_probe_kernel_headers_download_enabled: false
+  system_probe_max_connections_per_message: 0
+  system_probe_prebuilt_fallback_enabled: false
+  system_probe_protocol_classification_enabled: false
+  system_probe_root_namespace_enabled: false
+  system_probe_runtime_compilation_enabled: false
+  system_probe_telemetry_enabled: false
+  system_probe_track_tcp_4_connections: false
+  system_probe_track_tcp_6_connections: false
+  system_probe_track_udp_4_connections: false
+  system_probe_track_udp_6_connections: false
+
+=================
+HA Agent Metadata
+=================
+
+
+=========
+Collector
+=========
+
+
+  Running Checks
+  ==============
+
+    cloud_hostinfo
+    --------------
+      Instance ID: cloud_hostinfo [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/cloud_hostinfo.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 0, Total: 0
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 2ms
+      Average Execution Time : 0s
+      Last Execution Date : 2026-10-01 23:53:46.485 UTC (1790898826485)
+      Last Successful Execution Date : 2026-10-01 23:53:46 UTC (1790898826000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/cloud_hostinfo.d/conf.yaml.default[0]
+
+
+    container
+    ---------
+      Instance ID: container [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/container.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 486, Total: 93,312
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 19ms
+      Average Execution Time : 32ms
+      Last Execution Date : 2026-10-01 23:53:53.505 UTC (1790898833505)
+      Last Successful Execution Date : 2026-10-01 23:53:53 UTC (1790898833000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/container.d/conf.yaml.default[0]
+
+
+    container_image
+    ---------------
+      Instance ID: container_image [OK]
+      Long Running Check: true
+      Configuration Source: file:/etc/datadog-agent/conf.d/container_image.d/conf.yaml.default[0]
+      Total Metric Samples: 0
+      Total Events: 0
+      Total container-images: 20
+      Total Service Checks: 0
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/container_image.d/conf.yaml.default[0]
+
+
+    container_lifecycle
+    -------------------
+      Instance ID: container_lifecycle [OK]
+      Long Running Check: true
+      Configuration Source: file:/etc/datadog-agent/conf.d/container_lifecycle.d/conf.yaml.default[0]
+      Total Metric Samples: 0
+      Total Events: 0
+      Total container-lifecycle: 3
+      Total Service Checks: 0
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/container_lifecycle.d/conf.yaml.default[0]
+
+
+    containerd
+    ----------
+      Instance ID: containerd [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/containerd.d/conf.yaml.default[0]
+      Total Runs: 191
+      Metric Samples: Last Run: 40, Total: 7,640
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 7ms
+      Average Execution Time : 11ms
+      Last Execution Date : 2026-10-01 23:53:44.494 UTC (1790898824494)
+      Last Successful Execution Date : 2026-10-01 23:53:44 UTC (1790898824000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/containerd.d/conf.yaml.default[0]
+
+
+    cpu
+    ---
+      Instance ID: cpu [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/cpu.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 19, Total: 3,641
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 1ms
+      Average Execution Time : 0s
+      Last Execution Date : 2026-10-01 23:53:51.483 UTC (1790898831483)
+      Last Successful Execution Date : 2026-10-01 23:53:51 UTC (1790898831000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/cpu.d/conf.yaml.default[0]
+
+
+    cri
+    ---
+      Instance ID: cri [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/cri.d/conf.yaml.default[0]
+      Total Runs: 191
+      Metric Samples: Last Run: 0, Total: 0
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 7ms
+      Average Execution Time : 14ms
+      Last Execution Date : 2026-10-01 23:53:43.485 UTC (1790898823485)
+      Last Successful Execution Date : 2026-10-01 23:53:43 UTC (1790898823000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/cri.d/conf.yaml.default[0]
+
+
+    datadog_cluster_agent (6.6.0)
+    -----------------------------
+      Instance ID: datadog_cluster_agent:b82387a3ba7a9520 [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/datadog_cluster_agent.d/auto_conf.yaml[0]
+      Total Runs: 190
+      Metric Samples: Last Run: 160, Total: 29,931
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 190
+      First Execution Time : 10ms
+      Average Execution Time : 30ms
+      Last Execution Date : 2026-10-01 23:53:52.507 UTC (1790898832507)
+      Last Successful Execution Date : 2026-10-01 23:53:52 UTC (1790898832000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/datadog_cluster_agent.d/auto_conf.yaml[0]
+
+
+    discovery
+    ---------
+      Instance ID: discovery [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/discovery.d/conf.yaml.default[0]
+      Total Runs: 48
+      Metric Samples: Last Run: 0, Total: 0
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 0s
+      Average Execution Time : 0s
+      Last Execution Date : 2026-10-01 23:53:01.569 UTC (1790898781569)
+      Last Successful Execution Date : 2026-10-01 23:53:01 UTC (1790898781000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/discovery.d/conf.yaml.default[0]
+
+
+    disk
+    ----
+      Instance ID: disk:67cc0574430a16ba [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/disk.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 960, Total: 184,320
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 9ms
+      Average Execution Time : 35ms
+      Last Execution Date : 2026-10-01 23:53:50.514 UTC (1790898830514)
+      Last Successful Execution Date : 2026-10-01 23:53:50 UTC (1790898830000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/disk.d/conf.yaml.default[0]
+
+
+    file_handle
+    -----------
+      Instance ID: file_handle [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/file_handle.d/conf.yaml.default[0]
+      Total Runs: 191
+      Metric Samples: Last Run: 5, Total: 955
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 0s
+      Average Execution Time : 0s
+      Last Execution Date : 2026-10-01 23:53:42.482 UTC (1790898822482)
+      Last Successful Execution Date : 2026-10-01 23:53:42 UTC (1790898822000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/file_handle.d/conf.yaml.default[0]
+
+
+    io
+    --
+      Instance ID: io [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/io.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 132, Total: 25,254
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 0s
+      Average Execution Time : 0s
+      Last Execution Date : 2026-10-01 23:53:49.484 UTC (1790898829484)
+      Last Successful Execution Date : 2026-10-01 23:53:49 UTC (1790898829000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/io.d/conf.yaml.default[0]
+
+
+    kubelet
+    -------
+      Instance ID: kubelet [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/kubelet.d/conf.yaml.default[0]
+      Total Runs: 144
+      Metric Samples: Last Run: 1,330, Total: 191,092
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 5, Total: 720
+      First Execution Time : 461ms
+      Average Execution Time : 418ms
+      Last Execution Date : 2026-10-01 23:53:42.058 UTC (1790898822058)
+      Last Successful Execution Date : 2026-10-01 23:53:42 UTC (1790898822000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/kubelet.d/conf.yaml.default[0]
+
+
+    load
+    ----
+      Instance ID: load [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/load.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 6, Total: 1,152
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 0s
+      Average Execution Time : 0s
+      Last Execution Date : 2026-10-01 23:53:56.485 UTC (1790898836485)
+      Last Successful Execution Date : 2026-10-01 23:53:56 UTC (1790898836000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/load.d/conf.yaml.default[0]
+
+
+    memory
+    ------
+      Instance ID: memory [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/memory.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 20, Total: 3,840
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 0s
+      Average Execution Time : 1ms
+      Last Execution Date : 2026-10-01 23:53:48.485 UTC (1790898828485)
+      Last Successful Execution Date : 2026-10-01 23:53:48 UTC (1790898828000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/memory.d/conf.yaml.default[0]
+
+
+    network
+    -------
+      Instance ID: network [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/network.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 216, Total: 41,616
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 1ms
+      Average Execution Time : 6ms
+      Last Execution Date : 2026-10-01 23:53:55.484 UTC (1790898835484)
+      Last Successful Execution Date : 2026-10-01 23:53:55 UTC (1790898835000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/network.d/conf.yaml.default[0]
+
+
+    ntp
+    ---
+      Instance ID: ntp:3c427a42a70bbf8 [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/ntp.d/conf.yaml.default[0]
+      Total Runs: 4
+      Metric Samples: Last Run: 2, Total: 8
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 4
+      First Execution Time : 1ms
+      Average Execution Time : 13ms
+      Last Execution Date : 2026-10-01 23:51:01.613 UTC (1790898661613)
+      Last Successful Execution Date : 2026-10-01 23:51:01 UTC (1790898661000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/ntp.d/conf.yaml.default[0]
+
+
+    openmetrics (7.4.1)
+    -------------------
+      Instance ID: openmetrics:datadog.operator:d3f02b36d0a0b72f [OK]
+      Configuration Source: container:containerd://c9d1d9efe694579bafc744373184167f211db0327b114402fa7959f29effb9d4[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 366, Total: 70,272
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 192
+      First Execution Time : 89ms
+      Average Execution Time : 51ms
+      Last Execution Date : 2026-10-01 23:53:53.514 UTC (1790898833514)
+      Last Successful Execution Date : 2026-10-01 23:53:53 UTC (1790898833000)
+      metadata:
+        config.source: containerd://c9d1d9efe694579bafc744373184167f211db0327b114402fa7959f29effb9d4[0]
+
+
+    orchestrator_kubelet_config
+    ---------------------------
+      Instance ID: orchestrator_kubelet_config:45ec97f32309a951 [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/orchestrator_kubelet_config.d/conf.yaml.default[0]
+      Total Runs: 5
+      Metric Samples: Last Run: 0, Total: 0
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 0s
+      Average Execution Time : 5ms
+      Last Execution Date : 2026-10-01 23:46:01.584 UTC (1790898361584)
+      Last Successful Execution Date : 2026-10-01 23:46:01 UTC (1790898361000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/orchestrator_kubelet_config.d/conf.yaml.default[0]
+
+
+    orchestrator_pod
+    ----------------
+      Instance ID: orchestrator_pod:888ebc42a3817b00 [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/orchestrator_pod.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 0, Total: 0
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 0s
+      Average Execution Time : 13ms
+      Last Execution Date : 2026-10-01 23:53:47.491 UTC (1790898827491)
+      Last Successful Execution Date : 2026-10-01 23:53:47 UTC (1790898827000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/orchestrator_pod.d/conf.yaml.default[0]
+
+
+    telemetry
+    ---------
+      Instance ID: telemetry [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/telemetry.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 6, Total: 1,152
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 3s
+      Average Execution Time : 2ms
+      Last Execution Date : 2026-10-01 23:53:54.484 UTC (1790898834484)
+      Last Successful Execution Date : 2026-10-01 23:53:54 UTC (1790898834000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/telemetry.d/conf.yaml.default[0]
+
+
+    uptime
+    ------
+      Instance ID: uptime [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/uptime.d/conf.yaml.default[0]
+      Total Runs: 192
+      Metric Samples: Last Run: 1, Total: 192
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      First Execution Time : 2ms
+      Average Execution Time : 0s
+      Last Execution Date : 2026-10-01 23:53:46.485 UTC (1790898826485)
+      Last Successful Execution Date : 2026-10-01 23:53:46 UTC (1790898826000)
+      metadata:
+        config.source: /etc/datadog-agent/conf.d/uptime.d/conf.yaml.default[0]
+
+  Check Worker Utilization
+  ========================
+    Total Workers: 4
+    Average Utilization: 1.0%
+
+    Top Workers (by utilization):
+      worker_3: 2.0%
+      worker_2: 1.0%
+      worker_4: 1.0%
+      worker_1: 0.0%
+
+==========
+Aggregator
+==========
+
+  Checks Metric Sample: 730,723
+  Dogstatsd Metric Sample: 50,797
+  Event: 1
+  Events Flushed: 1
+  Number Of Flushes: 191
+  Series Flushed: 572,427
+  Service Check: 1,298
+  Service Checks Flushed: 1,486
+  container-images: 20
+  container-lifecycle: 3
+
+=========
+APM Agent
+=========
+
+  Status: Running
+  Pid: 12224
+  Uptime: 2878 seconds
+  Mem alloc: 20,662,024 bytes
+  Hostname: i-020acb5cf9ec4a1b8
+  Receiver: 0.0.0.0:8126
+  UDS receiver: /var/run/datadog/apm.socket
+  Endpoints:
+    https://trace.agent.datadoghq.eu.
+
+  Receiver (previous minute)
+  ==========================
+    From python 3.10.21 (CPython), client 4.15.4 via tcp
+      Traces received: 22 (34,796 bytes)
+      Spans received: 198
+
+    From python 3.10.21 (CPython), client 4.15.4 via tcp
+      Traces received: 20 (31,806 bytes)
+      Spans received: 180
+
+
+
+    Priority sampling rate for 'service:calendar,env:exam': 100.0%
+    Priority sampling rate for 'service:notes,env:exam': 100.0%
+
+  Writer (previous minute)
+  ========================
+    Traces: 8 payloads, 31 traces, 0 events, 30,829 bytes
+    Stats: 1 payloads, 4 stats buckets, 1,528 bytes
+
+  Trace Semantics
+  ===============
+    Source: embedded default
+    Content hash: sha256:d2d19e7f53f8d3cb4abe235d3a83b3dcb3399cadcc21cc2ebb5d5e724143b7f3
+    Version: v20260630131934-121850049
+
+=============
+Autodiscovery
+=============
+
+  Enabled Features
+  ================
+    containerd
+    cri
+    kube_orchestratorexplorer
+    kubelet_config_orchestrator_check
+    kubernetes
+    process
+
+=====================
+Datadog Cluster Agent
+=====================
+
+    - Datadog Cluster Agent endpoint detected: https://10.43.36.249:5005
+    Successfully connected to the Datadog Cluster Agent.
+    - Running: 7.84.0+commit.3541b128
+
+=============
+Delegatedauth
+=============
+
+Delegated Authentication is not enabled
+
+=========
+DogStatsD
+=========
+
+  Event Packets: 0
+  Event Parse Errors: 0
+  Metric Packets: 50,220
+  Metric Parse Errors: 0
+  Service Check Packets: 0
+  Service Check Parse Errors: 0
+  Udp Bytes: 8,874,153
+  Udp Packet Reading Errors: 0
+  Udp Packets: 17,732
+  Uds Bytes: 0
+  Uds Origin Detection Errors: 0
+  Uds Packet Reading Errors: 0
+  Uds Packets: 1
+  Unterminated Metric Errors: 0
+
+Tip: For troubleshooting, enable 'dogstatsd_metrics_stats_enable' in the main datadog.yaml file to generate Dogstatsd logs. Once 'dogstatsd_metrics_stats_enable' is enabled, users can also use 'dogstatsd-stats' command to get visibility of the latest collected metrics.
+
+=========
+Endpoints
+=========
+
+  https://app.datadoghq.eu. - API Key ending with:
+      - 4e85
+
+================
+Fleet Automation
+================
+
+
+  Fleet Management is disabled
+
+  Remote Management Status:    Enabled
+  Datadog Installer Status:    Not running
+
+
+=========
+Forwarder
+=========
+
+  Transactions
+  ============
+    Cluster: 0
+    ClusterRole: 0
+    ClusterRoleBinding: 0
+    ConfigMap: 0
+    CronJob: 0
+    CustomResource: 0
+    CustomResourceDefinition: 0
+    DaemonSet: 0
+    Deployment: 0
+    Dropped: 0
+    ECSTask: 0
+    EndpointSlice: 0
+    HighPriorityQueueFull: 0
+    HorizontalPodAutoscaler: 0
+    Ingress: 0
+    Job: 0
+    KubeletConfiguration: 0
+    LimitRange: 0
+    Namespace: 0
+    NetworkPolicy: 0
+    Node: 0
+    OrchestratorManifest: 27
+    PersistentVolume: 0
+    PersistentVolumeClaim: 0
+    Pod: 23
+    PodDisruptionBudget: 0
+    ReplicaSet: 0
+    Requeued: 0
+    Retried: 0
+    RetryQueueSize: 0
+    Role: 0
+    RoleBinding: 0
+    Service: 0
+    ServiceAccount: 0
+    StatefulSet: 0
+    StorageClass: 0
+    VerticalPodAutoscaler: 0
+
+  Transaction Successes
+  =====================
+    Total number: 769
+    Successes By Endpoint:
+      check_run_v1: 191
+      intake: 19
+      metadata_v1: 30
+      orchestrator: 23
+      orchmanifest: 27
+      process: 288
+      series_v3: 191
+
+  On-disk storage
+  ===============
+    On-disk storage is disabled. Configure `forwarder_storage_max_size_in_bytes` to enable it.
+
+  API Keys status
+  ===============
+    API key ending with 4e85: API Key valid
+
+=========
+JMX Fetch
+=========
+
+  Information
+  ==================
+  Initialized checks
+  ==================
+    no checks
+
+  Failed checks
+  =============
+    no checks
+
+
+==========
+Logs Agent
+==========
+
+    Reliable: Sending compressed logs in HTTPS to agent-http-intake.logs.datadoghq.eu. on port 443 (API Key: ****************************4e85)
+    BytesSent: 4991660
+    EncodedBytesSent: 820756
+    LogsProcessed: 4096
+    LogsSent: 4118
+    LogsTruncated: 0
+    RetryCount: 0
+    RetryTimeSpent: 0s
+    CoreAgentProcessOpenFiles: 54
+    OSFileLimit: 1048576
+
+  Logs Agent Backpressure
+  =======================
+
+  Overall state: HEALTHY
+
+  Component              Instance Current   5m avg/max    30m avg/max    2h max    5h max    10h max    30m saturated    Last saturated
+  processor              0        0%        0/0%          0/0%           0%        0%        0%         0s               -
+  processor              1        0%        0/0%          0/0%           0%        0%        0%         0s               -
+  strategy               0        0%        0/0%          0/0%           0%        0%        0%         0s               -
+  strategy               1        0%        0/0%          0/0%           0%        0%        0%         0s               -
+  worker                 q0s0     0%        0/0%          0/0%           0%        0%        0%         0s               -
+  destination_reliable_0 q0s0     0%        0/0%          0/0%           0%        0%        0%         0s               -
+
+  ============
+  Integrations
+  ============
+
+  kube-system/coredns-7cfb7bc9c7-dzvqh/coredns
+  --------------------------------------------
+    - Type: file
+      Identifier: 08cbe3fd5ff0d31d81e4439984c10d951c7877678015899547efd18cf51a4024
+      Path: /var/log/pods/kube-system_coredns-7cfb7bc9c7-dzvqh_8b54251d-07a8-432c-9ff0-2020d721b5d6/coredns/*.log
+      Service: mirrored-coredns-coredns
+      Source: mirrored-coredns-coredns
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/kube-system_coredns-7cfb7bc9c7-dzvqh_8b54251d-07a8-432c-9ff0-2020d721b5d6/coredns/0.log  
+      Bytes Read: 25215   
+      Pipeline Latency:
+        Average Latency: 428.666µs
+        24h Average Latency: 428.666µs
+        Peak Latency: 13.143429ms
+        24h Peak Latency: 13.143429ms  
+      Processing Rules: No rules applied 
+
+  liora/notes-68766dd7-vp849/notes
+  --------------------------------
+    - Type: file
+      Identifier: 5ccca4eacd45f1ff8dc735e1a5c60c46dd2183774dad7f2471dad0179edb7ff0
+      Path: /var/log/pods/liora_notes-68766dd7-vp849_8ccf0ba4-b8fe-4932-835d-f85053b20c1e/notes/*.log
+      Service: notes
+      Source: notes
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/liora_notes-68766dd7-vp849_8ccf0ba4-b8fe-4932-835d-f85053b20c1e/notes/0.log  
+      Bytes Read: 78608   
+      Pipeline Latency:
+        Average Latency: 751.627ms
+        24h Average Latency: 751.627ms
+        Peak Latency: 1.017206782s
+        24h Peak Latency: 1.017206782s  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-cluster-agent-cb6c59689-rqpdm/init-volume
+  ---------------------------------------------------------------
+    - Type: file
+      Identifier: 5b1f80f6f222194a35f4148e213decaae7b66ea5669f463806f9eee7293ef286
+      Path: /var/log/pods/datadog_datadog-agent-cluster-agent-cb6c59689-rqpdm_f95b33c7-5e48-4da0-aa5a-d0d683f87926/init-volume/*.log
+      Service: cluster-agent
+      Source: cluster-agent
+      Status: OK
+        1 files tailed out of 1 files matching  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency: 0s
+        24h Average Latency: 0s
+        Peak Latency: 0s
+        24h Peak Latency: 0s  
+      Processing Rules: No rules applied 
+
+  liora/db-7fbdc57c8-9bzgj/postgres
+  ---------------------------------
+    - Type: file
+      Identifier: e7d6e86967a73f5479855931d8fe69e832b8b4220ddc6f8e8cf196e998597bdf
+      Path: /var/log/pods/liora_db-7fbdc57c8-9bzgj_aa56236a-c7f0-4b76-917a-d06d09add281/postgres/*.log
+      Service: postgres
+      Source: postgres
+      Status: OK
+        1 files tailed out of 1 files matching  
+      Bytes Read: 864   
+      Pipeline Latency:
+        Average Latency: 1.000693508s
+        24h Average Latency: 1.000693508s
+        Peak Latency: 1.001261996s
+        24h Peak Latency: 1.001261996s  
+      Processing Rules: No rules applied 
+
+  liora/notes-68766dd7-vp849/wait-for-db
+  --------------------------------------
+    - Type: file
+      Identifier: be4bd1795debca260592dee6e5c84954ff7231419aadfc0d78463d744ae1045a
+      Path: /var/log/pods/liora_notes-68766dd7-vp849_8ccf0ba4-b8fe-4932-835d-f85053b20c1e/wait-for-db/*.log
+      Service: notes
+      Source: notes
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/liora_notes-68766dd7-vp849_8ccf0ba4-b8fe-4932-835d-f85053b20c1e/wait-for-db/0.log  
+      Bytes Read: 696   
+      Pipeline Latency:
+        Average Latency: 5.460332ms
+        24h Average Latency: 5.460332ms
+        Peak Latency: 5.473682ms
+        24h Peak Latency: 5.473682ms  
+      Processing Rules: No rules applied 
+
+  kube-system/metrics-server-6dc596dfb8-f8bbm/metrics-server
+  ----------------------------------------------------------
+    - Type: file
+      Identifier: 6b599265e42538b681a8aaa4e7f6e8a4ee1ad648b57da816c0b9d9328fb1068c
+      Path: /var/log/pods/kube-system_metrics-server-6dc596dfb8-f8bbm_b9832dd2-9232-4aca-8b76-bbc559dd2adf/metrics-server/*.log
+      Service: mirrored-metrics-server
+      Source: mirrored-metrics-server
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/kube-system_metrics-server-6dc596dfb8-f8bbm_b9832dd2-9232-4aca-8b76-bbc559dd2adf/metrics-server/0.log  
+      Bytes Read: 3269   
+      Pipeline Latency:
+        Average Latency: 45.97416ms
+        24h Average Latency: 45.97416ms
+        Peak Latency: 1.001624427s
+        24h Peak Latency: 1.001624427s  
+      Processing Rules: No rules applied 
+
+  liora/notes-68766dd7-8cbgb/wait-for-db
+  --------------------------------------
+    - Type: file
+      Identifier: e9185f7a1860a382c337e46dea3dfd0e25f2bd4b2c3cdc3641da4d4150780b04
+      Path: /var/log/pods/liora_notes-68766dd7-8cbgb_c1864eb8-a873-46cd-9d59-3ad7ca2abad5/wait-for-db/*.log
+      Service: notes
+      Source: notes
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/liora_notes-68766dd7-8cbgb_c1864eb8-a873-46cd-9d59-3ad7ca2abad5/wait-for-db/0.log  
+      Bytes Read: 695   
+      Pipeline Latency:
+        Average Latency: 3.02157ms
+        24h Average Latency: 3.02157ms
+        Peak Latency: 3.177737ms
+        24h Peak Latency: 3.177737ms  
+      Processing Rules: No rules applied 
+
+  kube-system/local-path-provisioner-77b9867795-pbbdn/local-path-provisioner
+  --------------------------------------------------------------------------
+    - Type: file
+      Identifier: 017197f33e8ae0e262c1464bd51e01d22f29d55773d9cf0dc46fd4f925a2cbf1
+      Path: /var/log/pods/kube-system_local-path-provisioner-77b9867795-pbbdn_e1028fed-f1d3-4d48-884b-64f394ffa28a/local-path-provisioner/*.log
+      Service: local-path-provisioner
+      Source: local-path-provisioner
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/kube-system_local-path-provisioner-77b9867795-pbbdn_e1028fed-f1d3-4d48-884b-64f394ffa28a/local-path-provisioner/0.log  
+      Bytes Read: 2214   
+      Pipeline Latency:
+        Average Latency: 101.003664ms
+        24h Average Latency: 101.003664ms
+        Peak Latency: 1.000917993s
+        24h Peak Latency: 1.000917993s  
+      Processing Rules: No rules applied 
+
+  kube-system/traefik-7c8544f77-vbrg8/traefik
+  -------------------------------------------
+    - Type: file
+      Identifier: cccd57a65751e296968ea293b0c0cb42954d15dbba232631ce7f7c21d3970793
+      Path: /var/log/pods/kube-system_traefik-7c8544f77-vbrg8_06e689a8-0980-45b3-9914-69398b59a5a3/traefik/*.log
+      Service: mirrored-library-traefik
+      Source: mirrored-library-traefik
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/kube-system_traefik-7c8544f77-vbrg8_06e689a8-0980-45b3-9914-69398b59a5a3/traefik/0.log  
+      Bytes Read: 5765   
+      Pipeline Latency:
+        Average Latency: 50.10682ms
+        24h Average Latency: 50.10682ms
+        Peak Latency: 1.000344549s
+        24h Peak Latency: 1.000344549s  
+      Processing Rules: No rules applied 
+
+  liora/calendar-7f6bb6d5f-jnxt8/calendar
+  ---------------------------------------
+    - Type: file
+      Identifier: c61d4adaabd94cb4d38f0c802edf5af9cec02991d81b5142b7c8ee047e7a1744
+      Path: /var/log/pods/liora_calendar-7f6bb6d5f-jnxt8_4d257601-9615-4ae2-919c-9369b0138d8b/calendar/*.log
+      Service: calendar
+      Source: calendar
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/liora_calendar-7f6bb6d5f-jnxt8_4d257601-9615-4ae2-919c-9369b0138d8b/calendar/0.log  
+      Bytes Read: 53459   
+      Pipeline Latency:
+        Average Latency: 847.872641ms
+        24h Average Latency: 847.872641ms
+        Peak Latency: 1.005338229s
+        24h Peak Latency: 1.005338229s  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-operator-7bf7794596-mznn4/operator
+  --------------------------------------------------------
+    - Type: file
+      Identifier: c9d1d9efe694579bafc744373184167f211db0327b114402fa7959f29effb9d4
+      Path: /var/log/pods/datadog_datadog-agent-operator-7bf7794596-mznn4_47f31f20-f60c-4178-8a6c-d8821fa51c7c/operator/*.log
+      Service: operator
+      Source: operator
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/datadog_datadog-agent-operator-7bf7794596-mznn4_47f31f20-f60c-4178-8a6c-d8821fa51c7c/operator/0.log  
+      Bytes Read: 10425   
+      Pipeline Latency:
+        Average Latency: 2.91986ms
+        24h Average Latency: 2.91986ms
+        Peak Latency: 4.803173ms
+        24h Peak Latency: 4.803173ms  
+      Processing Rules: No rules applied 
+
+  kube-system/svclb-traefik-a3254c87-r92pl/lb-tcp-80
+  --------------------------------------------------
+    - Type: file
+      Identifier: 7b253a626130fdb7394726eb912f3b3a3dcaa9d72dd8bc1172aa45369ae2eb99
+      Path: /var/log/pods/kube-system_svclb-traefik-a3254c87-r92pl_a5c0312a-2572-4cde-b1c2-f32a928881e9/lb-tcp-80/*.log
+      Service: klipper-lb
+      Source: klipper-lb
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/kube-system_svclb-traefik-a3254c87-r92pl_a5c0312a-2572-4cde-b1c2-f32a928881e9/lb-tcp-80/0.log  
+      Bytes Read: 2024   
+      Pipeline Latency:
+        Average Latency: 611.66µs
+        24h Average Latency: 611.66µs
+        Peak Latency: 632.983µs
+        24h Peak Latency: 632.983µs  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-82m9d/init-volume
+  ---------------------------------------
+    - Type: file
+      Identifier: 965c94c66f6ab3163e0a40c825403490747ee8a6982afa6d4ed51071909e711c
+      Path: /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/init-volume/*.log
+      Service: agent
+      Source: agent
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/init-volume/0.log  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency: 0s
+        24h Average Latency: 0s
+        Peak Latency: 0s
+        24h Peak Latency: 0s  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-82m9d/init-config
+  ---------------------------------------
+    - Type: file
+      Identifier: 75d88deae497a9c967b9c4054435aa03d0202fff95d5b5296cefc516a780d8b3
+      Path: /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/init-config/*.log
+      Service: agent
+      Source: agent
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/init-config/0.log  
+      Bytes Read: 101   
+      Pipeline Latency:
+        Average Latency: 834.836µs
+        24h Average Latency: 834.836µs
+        Peak Latency: 834.836µs
+        24h Peak Latency: 834.836µs  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-82m9d/seccomp-setup
+  -----------------------------------------
+    - Type: file
+      Identifier: c07900ace42ae741c93117d2747f27b3a30d8ff85e55f32603120c1e576f0b9b
+      Path: /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/seccomp-setup/*.log
+      Service: agent
+      Source: agent
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/seccomp-setup/0.log  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency: 0s
+        24h Average Latency: 0s
+        Peak Latency: 0s
+        24h Peak Latency: 0s  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-82m9d/system-probe
+  ----------------------------------------
+    - Type: file
+      Identifier: 8ccce71aa0000cd7b1b8d83d8be53220f2fb7c3cbaa843c4dc804cfeb555b778
+      Path: /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/system-probe/*.log
+      Service: agent
+      Source: agent
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/system-probe/0.log  
+      Bytes Read: 9957   
+      Pipeline Latency:
+        Average Latency: 26.004464ms
+        24h Average Latency: 26.004464ms
+        Peak Latency: 1.001340191s
+        24h Peak Latency: 1.001340191s  
+      Processing Rules: No rules applied 
+
+  kube-system/svclb-traefik-a3254c87-r92pl/lb-tcp-443
+  ---------------------------------------------------
+    - Type: file
+      Identifier: 4992ed8c2982487c7cd66f807037a20c37de5a85c14a9b3e65c6ee9b4358b69c
+      Path: /var/log/pods/kube-system_svclb-traefik-a3254c87-r92pl_a5c0312a-2572-4cde-b1c2-f32a928881e9/lb-tcp-443/*.log
+      Service: klipper-lb
+      Source: klipper-lb
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/kube-system_svclb-traefik-a3254c87-r92pl_a5c0312a-2572-4cde-b1c2-f32a928881e9/lb-tcp-443/0.log  
+      Bytes Read: 2029   
+      Pipeline Latency:
+        Average Latency: 795.641µs
+        24h Average Latency: 795.641µs
+        Peak Latency: 817.03µs
+        24h Peak Latency: 817.03µs  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-82m9d/agent
+  ---------------------------------
+    - Type: file
+      Identifier: ed1c7fc4bf9ff3e481c8f94bd210fb096e8d8a2a2fc5543dbecb79c269da5ade
+      Path: /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/agent/*.log
+      Service: agent
+      Source: agent
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/agent/0.log  
+      Bytes Read: 185696   
+      Pipeline Latency:
+        Average Latency: 155.496367ms
+        24h Average Latency: 155.496367ms
+        Peak Latency: 1.017728746s
+        24h Peak Latency: 1.017728746s  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-82m9d/trace-agent
+  ---------------------------------------
+    - Type: file
+      Identifier: c6d5723a29969d3c4c0da13300050dc15819aef6f012252815f4ea30c10f7ff8
+      Path: /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/trace-agent/*.log
+      Service: agent
+      Source: agent
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/datadog_datadog-agent-82m9d_bb39c71d-3eb2-4df1-abc8-e2f329a63dab/trace-agent/0.log  
+      Bytes Read: 15017   
+      Pipeline Latency:
+        Average Latency: 251.254989ms
+        24h Average Latency: 251.254989ms
+        Peak Latency: 1.004737424s
+        24h Peak Latency: 1.004737424s  
+      Processing Rules: No rules applied 
+
+  liora/notes-68766dd7-8cbgb/notes
+  --------------------------------
+    - Type: file
+      Identifier: 260f4edab02897ebf37909b203fb3eecdde5ab5f43eae1d019a9898d91d544ff
+      Path: /var/log/pods/liora_notes-68766dd7-8cbgb_c1864eb8-a873-46cd-9d59-3ad7ca2abad5/notes/*.log
+      Service: notes
+      Source: notes
+      TailingMode: beginning
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/liora_notes-68766dd7-8cbgb_c1864eb8-a873-46cd-9d59-3ad7ca2abad5/notes/0.log  
+      Bytes Read: 78788   
+      Pipeline Latency:
+        Average Latency: 752.742931ms
+        24h Average Latency: 752.742931ms
+        Peak Latency: 1.025391313s
+        24h Peak Latency: 1.025391313s  
+      Processing Rules: No rules applied 
+
+  liora/calendar-7f6bb6d5f-s56rq/calendar
+  ---------------------------------------
+    - Type: file
+      Identifier: 8965e453bbc9db302d877c380e59ccf98dbdc9103a4056768309be0f0978334e
+      Path: /var/log/pods/liora_calendar-7f6bb6d5f-s56rq_2ef585ff-90f8-42f1-8367-95a486f4b358/calendar/*.log
+      Service: calendar
+      Source: calendar
+      Status: OK
+        1 files tailed out of 1 files matching  
+      Bytes Read: 45587   
+      Pipeline Latency:
+        Average Latency: 866.360009ms
+        24h Average Latency: 866.360009ms
+        Peak Latency: 1.005954273s
+        24h Peak Latency: 1.005954273s  
+      Processing Rules: No rules applied 
+
+  datadog/datadog-agent-cluster-agent-cb6c59689-rqpdm/cluster-agent
+  -----------------------------------------------------------------
+    - Type: file
+      Identifier: a5fbfa4b45a0605431e5d82676917d28c3bc7b61da7647bf0f797e7df8d46791
+      Path: /var/log/pods/datadog_datadog-agent-cluster-agent-cb6c59689-rqpdm_f95b33c7-5e48-4da0-aa5a-d0d683f87926/cluster-agent/*.log
+      Service: cluster-agent
+      Source: cluster-agent
+      Status: OK
+        1 files tailed out of 1 files matching  
+      Bytes Read: 6860   
+      Pipeline Latency:
+        Average Latency: 765.45298ms
+        24h Average Latency: 765.45298ms
+        Peak Latency: 1.003849319s
+        24h Peak Latency: 1.003849319s  
+      Processing Rules: No rules applied 
+
+==========
+OTel Agent
+==========
+
+
+  Status: Not running or unreachable on https://localhost:7777.
+  Error: OTel Agent is not enabled.
+
+====
+OTLP
+====
+
+  Status: Not enabled
+  Collector status: Not running
+
+
+
+=====================
+Private Action Runner
+=====================
+Status: Disabled
+
+=============
+Process Agent
+=============
+
+  Status: Not running or unreachable
+
+=================
+Process Component
+=================
+
+
+  Enabled Checks: [process rtprocess service_discovery]
+  System Probe Process Module Status: Not running
+  Process Language Detection Enabled: False
+
+  =================
+  Process Endpoints
+  =================
+    https://process.datadoghq.eu. - API Key ending with:
+        - 4e85
+
+  =========
+  Collector
+  =========
+    Last collection time: 2026-10-01 23:53:51
+    Docker socket: 
+    Number of processes: 93
+    Number of containers: 16
+    Process Queue length: 0
+    RTProcess Queue length: 0
+    Connections Queue length: 0
+    Event Queue length: 0
+    Process Bytes enqueued: 0
+    RTProcess Bytes enqueued: 0
+    Connections Bytes enqueued: 0
+    Event Bytes enqueued: 0
+    Drop Check Payloads: []
+    Number of submission errors: 0
+
+  ==========
+  Extractors
+  ==========
+
+    Workloadmeta
+    ============
+      Cache size: 0
+      Stale diffs discarded: 0
+      Diffs dropped: 0
+
+=============
+Remote Agents
+=============
+
+1 remote agent(s) registered:
+
+  Name: Trace Agent
+  Flavor: trace_agent
+  Session ID: fa10abd8-512f-49d4-96c5-861d662a3b9e
+  -----------
+  Last seen: 6.710774722s ago
+
+====================
+Remote Configuration
+====================
+
+
+Organization enabled: True
+API Key: Authorized
+Last error: None
+
+
+
+=======
+Secrets
+=======
+
+No secret_backend_command set: secrets feature is not enabled
+===
+SSI
+===
+
+    SSI is not enabled.
+
+
+============
+System Probe
+============
+
+
+========================
+Transport Proxy Warnings
+========================
+
+  No Transport Proxy Warnings
+
